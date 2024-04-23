@@ -82,8 +82,8 @@ def Ah(planet,Y,M,D,H, lat, long):
 
 for d in range(1,366): #for all days from 1 to 365
   for p in [sun, mercury, venus, mars]:
-    RA,dec = RAdec(p, 2023, 1, d, 23-time_zone) #Padua is in the UTC + 1 time zone
-    A,h = Ah(p, 2023, 1, d, 23-time_zone, lat, long)
+    RA,dec = RAdec(p, 2024, 1, d, 23-time_zone) #Padua is in the UTC + 1 time zone
+    A,h = Ah(p, 2024, 1, d, 23-time_zone, lat, long)
     p.RA.append(RA)
     p.dec.append(dec)
     p.A.append(A)
@@ -110,3 +110,4 @@ ax2.plot(venus.A, venus.h, '.', label=venus.name, markersize=2)
 ax2.plot(mars.A, mars.h, '.',  label=mars.name, markersize=2)
 ax2.plot(sun.A, sun.h, '.', label=sun.name, markersize=2)
 ax2.legend()
+plt.show()
